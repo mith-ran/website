@@ -2,17 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 </head>
 
 
 <style>
-    .grid{
-        display: grid;
-        grid-template-columns:  repeat(6, 1fr);
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     }
-    .rating{
+    
+    @media (max-width: 2000px){
+
+    .grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+@media (max-width: 1300px){
+    
+    .grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+@media (max-width: 1000px){
+    
+    .grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media (max-width: 800px){
+    
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+
+
+.rating{
         display: flex;
         align-items: center;
         margin-bottom: 10px;
@@ -54,7 +83,7 @@
     right: 0;
    }
    body{
-    margin: 0%;
+    margin: 0;
    }
    .ret{
     width: 180px;
@@ -95,6 +124,7 @@
     border-radius: 20px;
     border: none;
     background-color: rgb(255, 216, 20);
+    cursor: pointer;
    }
 
    .img-container{
@@ -111,6 +141,24 @@
     margin-top: 60px;
    }
 
+   .anchor{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+   }
+
+   .cart-num{
+    position: absolute;
+  
+    color:rgb(240, 136, 4);
+  
+    border: none;
+    
+    right: 80px;
+    bottom: 14px    ;
+    
+   }
+   
+  
 
 </style>
 
@@ -126,15 +174,19 @@
 
       </div>
       <div class="ret">
-        <div>
+        
+            <a class="anchor" href="">
 
-            <p style="margin-bottom: 0%;">Returns</p>
-            <h3 style="margin-top: 0%;"  >&Orders</h3>
-        </div>
+                <p style="margin-bottom: 0%;">Returns</p>
+                <h3 style="margin-top: 0%;"  >&Orders</h3>
+            </a>
 
-        <div>
+       
+
+        <div class="cart-con">
             <img src="jpg/cart-icon.png" width="40px" >
         </div>
+        <p class="cart-num">0</p>
         <h3>Cart</h3>
       </div>
     </header>  
@@ -144,290 +196,28 @@
 
         
         <div class="grid">
-            <div class="container">
-                
-                    <div class="img-container">
-                        <img src="pic/pic 1.jpg" alt="" height="180px" class="product"   >
+        
     
-                    </div>
-                    <div class="para">
-                        <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
     
-                    </div>
-                    <div class="rating">
-                        <div>
     
-                            <img src="jpg/rating-45.png" width="100px">
-                        </div>
-                       <p style="margin: 0%;">78</p>
-                    </div>
-                   
     
-                        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-                    
-                    <div class="select">
     
-                        <select>
-                            <option selected>1</option>
-                            <option value="1">2</option>
-                            <option value="2">3</option>
-                            <option value="3">4</option>
-                        </select>
-                    </div>
-                    <div  class="add">
-                        <p></p>
-                    </div>
-                   
     
-                        <button class="cart-btn">Add to cart</button>
-                   
-                
-            </div>
-            <div class="container">
-                
-                <div class="img-container">
-                    <img src="pic/pic 2.jpg" alt="" height="180px"  class="product"  >
     
-                </div>
-                <div class="para">
-                    <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-    
-                </div>
-                <div class="rating">
-                    <div>
-    
-                        <img src="jpg/rating-45.png" width="100px">
-                    </div>
-                   <p style="margin: 0%;">78</p>
-                </div>
-               
-    
-                    <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-                
-                <div class="select">
-    
-                    <select>
-                        <option selected>1</option>
-                        <option value="1">2</option>
-                        <option value="2">3</option>
-                        <option value="3">4</option>
-                    </select>
-                </div>
-                <div  class="add">
-                    <p></p>
-                </div>
-               
-    
-                    <button class="cart-btn">Add to cart</button>
-               
+
             
-        </div>
-        <div class="container">
-                
-            <div class="img-container">
-                <img src="pic/pic 3.jpg" alt="" height="180px"  class="product"  >
-    
-            </div>
-            <div class="para">
-                <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-    
-            </div>
-            <div class="rating">
-                <div>
-    
-                    <img src="jpg/rating-45.png" width="100px">
-                </div>
-               <p style="margin: 0%;">78</p>
-            </div>
-           
-    
-                <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-            
-            <div class="select">
-    
-                <select>
-                    <option selected>1</option>
-                    <option value="1">2</option>
-                    <option value="2">3</option>
-                    <option value="3">4</option>
-                </select>
-            </div>
-            <div  class="add">
-                <p></p>
-            </div>
-           
-    
-                <button class="cart-btn">Add to cart</button>
-           
-        
-    </div>
-    <div class="container">
-                
-        <div class="img-container">
-            <img src="pic/black-2-slot-toaster.jpg" alt="" height="180px"  class="product"  >
-    
-        </div>
-        <div class="para">
-            <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-    
-        </div>
-        <div class="rating">
-            <div>
-    
-                <img src="jpg/rating-45.png" width="100px">
-            </div>
-           <p style="margin: 0%;">78</p>
-        </div>
-       
-    
-            <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-        
-        <div class="select">
-    
-            <select>
-                <option selected>1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-            </select>
-        </div>
-        <div  class="add">
-            <p></p>
-        </div>
-       
-    
-            <button class="cart-btn">Add to cart</button>
-       
-    
-    </div>
-    <div class="container">
-                
-        <div class="img-container">
-            <img src="pic/6-piece-non-stick-baking-set.webp" alt="" height="180px" class="product">
-    
-        </div>
-        <div class="para">
-            <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-    
-        </div>
-        <div class="rating">
-            <div>
-    
-                <img src="jpg/rating-45.png" width="100px">
-            </div>
-           <p style="margin: 0%;">78</p>
-        </div>
-       
-    
-            <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-        
-        <div class="select">
-    
-            <select>
-                <option selected>1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-            </select>
-        </div>
-        <div  class="add">
-            <p></p>
-        </div>
-       
-    
-            <button class="cart-btn">Add to cart</button>
-       
-    
-    </div>      
-    <div class="container">
-                
-        <div class="img-container">
-            <img src="pic/pic 1.jpg" alt="" height="180px" class="product"  >
-    
-        </div>
-        <div class="para">
-            <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-    
-        </div>
-        <div class="rating">
-            <div>
-    
-                <img src="jpg/rating-45.png" width="100px">
-            </div>
-           <p style="margin: 0%;">78</p>
-        </div>
-       
-    
-            <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-        
-        <div class="select">
-    
-            <select>
-                <option selected>1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-            </select>
-        </div>
-        <div  class="add">
-            <p></p>
-        </div>
-       
-    
-            <button class="cart-btn">Add to cart</button>
-       
-    
-    </div>
-    <div class="container">
-                
-        <div class="img-container">
-            <img src="pic/pic 1.jpg" alt="" height="180px"    class="product"  >
-    
-        </div>
-        <div class="para">
-            <p> Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-    
-        </div>
-        <div class="rating">
-            <div>
-    
-                <img src="jpg/rating-45.png" width="100px">
-            </div>
-           <p style="margin: 0%;">78</p>
-        </div>
-       
-    
-            <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹40</p>
-        
-        <div class="select">
-    
-            <select>
-                <option selected>1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-            </select>
-        </div>
-        <div  class="add">
-            <p></p>
-        </div>
-       
-    
-            <button class="cart-btn">Add to cart</button>
-       
-    
-    </div>
-    
-    
-    
-    
-    
-    
-    
         </div>
     </main>
 
 
 
 </body>
+
+<script src="product.js"></script>
+
+<script type="module"  src="e-com.js">
+
+</script>
+
+
 </html>
