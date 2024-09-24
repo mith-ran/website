@@ -1,4 +1,4 @@
-const product = [{
+export const product = [{
     Image: 'pic/pic 1.jpg',
     name : "Black and Gray Athletic Cotton Socks - 6 Pairs",
     rating: "jpg/rating-45.png",

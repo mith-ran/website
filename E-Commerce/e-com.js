@@ -1,4 +1,6 @@
-import { cart } from "./cart.js";
+import {cart,cart_num,cart_push} from "./cart.js";
+import {product} from "./product.js";
+//import { cart_dom } from "./cart_main.js";
 
 let html="";
 
@@ -52,35 +54,15 @@ product.forEach(function(product){
 
 document.querySelectorAll(".cart-btn").forEach(function(button){
     button.addEventListener('click',function(){
+        
         const product_name=button.dataset.name;
-        let matchingitem;
-        cart.forEach(function(item){
-            if (product_name===item.productname){
-                console.log("match");
-                item.quantity+=1;
-                matchingitem=2
-            }
-           
-        });
-
-            if (matchingitem!=2){
-
-                cart.push({
-                    productname:product_name,
-                    quantity:1
-                    
-                });
-            };
-
+        cart_push(product_name);
             
         
 
         console.log(cart);
-       
-        let cartquantity =0;
-        cart.forEach(function(item){
-            cartquantity+=item.quantity;
-        })
+ //       cart_dom();
+        let cartquantity=cart_num();
         console.log(cartquantity);
         document.querySelector(".cart-num").innerHTML=cartquantity;
     })
