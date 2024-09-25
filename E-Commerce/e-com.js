@@ -1,5 +1,5 @@
 import {cart,cart_num,cart_push} from "./cart.js";
-import {product} from "./product.js";
+import {product} from "./products1.js";
 //import { cart_dom } from "./cart_main.js";
 
 let html="";
@@ -12,7 +12,7 @@ product.forEach(function(product){
    `   <div class="container">  
                 
     <div class="img-container">
-        <img src="${product.Image}" alt="" height="180px" class="product"   >
+        <img src="${product.image}" alt="" height="180px" class="product"   >
 
     </div>
     
@@ -22,13 +22,13 @@ product.forEach(function(product){
     <div class="rating">
         <div>
 
-            <img src="${product.rating}" width="100px">
+            <img src="${product.rating.stars}" width="100px">
         </div>
-       <p style="margin: 0%;">${product.rating_no}</p>
+       <p style="margin: 0%;">${product.rating.count}</p>
     </div>
    
 
-        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">${product.price}</p>
+        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">${product.priceCents}*0.1</p>
     
     <div class="select">
 
