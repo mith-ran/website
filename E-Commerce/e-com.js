@@ -1,5 +1,5 @@
 import {cart,cart_num,cart_push} from "./cart.js";
-import {product} from "./products1.js";
+import {products} from "./products1.js";
 //import { cart_dom } from "./cart_main.js";
 
 let html="";
