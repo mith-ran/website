@@ -4,7 +4,7 @@ import {products} from "./products1.js";
 
 let html="";
 
-product.forEach(function(product){
+products.forEach(function(product){
 
     html+=  
     
