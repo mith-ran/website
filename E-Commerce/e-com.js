@@ -44,7 +44,7 @@ products.forEach(function(product){
     </div>
    
 
-        <button class="cart-btn" data-name="${product.name}   ">Add to cart</button>
+        <button class="cart-btn" data-name="${product.name}">Add to cart</button>
    
 
 </div>`
