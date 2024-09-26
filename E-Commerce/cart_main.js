@@ -4,12 +4,12 @@ import {cart,remove_cart,cart_num} from "./cart.js";
 let html="";
 console.log(cart);
 
- const cart_dom=()=>{
+ 
     cart.forEach((item)=>{
         
         products.forEach((product)=>{
             if(item.productname==product.name){
-                html+=`<div class="ele1" id=${item.productname} >
+                html+=`<div class="ele1" id=${product.id} >
                             <div class="date">Delevary Date: Tuesday,DEC15</div>
                             <div class="innergrid">
                                 <div>
@@ -17,8 +17,8 @@ console.log(cart);
                                 </div>
                                 <div>
                                     <h3>${product.name}</h3>
-                                    <div class="date1">${product.pricecents*0.1}</div>
-                                    <div>Quantity:${item.quantity} <span class="green up" data-name=${product.name} >Update</span> <span class="green del" data-name1="${product.name}" >Delete</span>
+                                    <div class="date1">$${product.priceCents*0.1}</div>
+                                    <div>Quantity:${item.quantity} <span class="green up" data-name=${product.id} >Update</span> <span class="green del" data-name1=${product.id} data-name="${product.name}" >Delete</span>
     
                                     </div>
                                 </div>
@@ -56,14 +56,14 @@ console.log(cart);
             }
         });
     })
-};
-cart_dom();
+
 document.querySelector('.ele').innerHTML=html;
 document.querySelectorAll('.del').forEach((item)=>item.addEventListener('click',()=>{
     const name=item.dataset.name1;
-    remove_cart(name);
-    console.log(cart);
-    const rem= document.querySelector(`#${name}`);
+    const qq= item.dataset.name;
+    console.log(qq);
+    remove_cart(qq);
+    const rem= document.querySelector(`#${CSS.escape(name)}`);
     rem.remove();
 
 

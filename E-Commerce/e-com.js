@@ -22,13 +22,13 @@ products.forEach(function(product){
     <div class="rating">
         <div>
 
-            <img src="${product.rating.stars}" width="100px">
+            <img src="images/ratings/rating-${product.rating.stars*10}.png" width="100px">
         </div>
        <p style="margin: 0%;">${product.rating.count}</p>
     </div>
    
 
-        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">${product.priceCents}*0.1</p>
+        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">$${product.priceCents/10}</p>
     
     <div class="select">
 
@@ -44,7 +44,7 @@ products.forEach(function(product){
     </div>
    
 
-        <button class="cart-btn" data-name="${product.name}">Add to cart</button>
+        <button class="cart-btn" data-name="${product.name}   ">Add to cart</button>
    
 
 </div>`

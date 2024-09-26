@@ -6,6 +6,7 @@ if(!cart){
            quantity:1
         }];
 }
+
                      
 export const remove_cart=(name1)=>{
    const name=name1;
@@ -17,9 +18,10 @@ export const remove_cart=(name1)=>{
         }
 
     })
-    console.log(cart)
-    console.log(new_cart)
-    save();
+    console.log(cart);
+    cart=new_cart;
+    console.log(cart);
+   save();
    
 
 }
@@ -32,7 +34,7 @@ export const cart_num=()=>{
         cartquantity+=item.quantity;
 
     })
-    save();
+     save();
     return cartquantity;
 }
 
@@ -59,9 +61,6 @@ export const cart_push=(product_name)=>{
         save();
 }
 
-export const test=()=>{
-    console.log("test");
-}
 
 function save(){
     localStorage.setItem('cart',JSON.stringify(cart));
