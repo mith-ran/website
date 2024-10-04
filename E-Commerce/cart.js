@@ -1,9 +1,10 @@
 export let cart = JSON.parse(localStorage.getItem('cartt'));
 if(!cart){
     cart=[{productname:"Black and Gray Athletic Cotton Socks - 6 Pairs",
-        quantity:1},{
+        quantity:1,cart_id:1},{
            productname:"Intermediate Size Basketball",
-           quantity:1
+           quantity:1,
+           cart_id:3
         }];
 }
 
@@ -55,7 +56,8 @@ export const cart_push=(product_name)=>{
 
             cart.push({
                 productname:product_name,
-                quantity:1
+                quantity:1,
+                cart_id:1
                 
             });
         };
@@ -64,7 +66,7 @@ export const cart_push=(product_name)=>{
 }
 
 
-function save(){
+export function save(){
     localStorage.setItem('cartt',JSON.stringify(cart));
     
 }

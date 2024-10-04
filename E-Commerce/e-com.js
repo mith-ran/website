@@ -28,7 +28,7 @@ products.forEach(function(product){
     </div>
    
 
-        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">$${product.priceCents/10}</p>
+        <p style="margin-bottom: 18px; margin-top: 0%; font-weight: 700;">₹${product.priceCents/10}</p>
     
     <div class="select">
 
