@@ -44,7 +44,7 @@ products.forEach(function(product){
     </div>
    
 
-        <button class="cart-btn" data-name="${product.name}">Add to cart</button>
+        <button class="cart-btn" data-name="${product.name}" data-id=${product.id} >Add to cart</button>
    
 
 </div>`
@@ -56,7 +56,8 @@ document.querySelectorAll(".cart-btn").forEach(function(button){
     button.addEventListener('click',function(){
         
         const product_name=button.dataset.name;
-        cart_push(product_name);
+        const id=button.dataset.id
+        cart_push(product_name,id);
             
         
 
