@@ -1,7 +1,7 @@
-import {products} from "./products1.js";
-import {cart,remove_cart,cart_num,save} from "./cart.js";
+import {products} from "./data/products1.js";
+import {cart,remove_cart,cart_num,save} from "./data/cart.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
-import { del_func} from "./delivery_option.js";
+import { del_func} from "./data/delivery_option.js";
 function render(){
 let html="";
 
