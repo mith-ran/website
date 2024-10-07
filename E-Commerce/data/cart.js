@@ -12,7 +12,6 @@ if(!cart){
                      
 export const remove_cart=(name1)=>{
    const name=name1;
-   console.log(name)
    let new_cart=[];
     cart.forEach((product)=>{
         if(name!=product.productname){
@@ -20,22 +19,16 @@ export const remove_cart=(name1)=>{
         }
 
     })
-    console.log(cart);
     cart=new_cart;
     console.log(cart);
    save();
- 
-   
-
 }
 
 export const cart_num=()=>{
     
-    let cartquantity =0;
-               
+    let cartquantity =0;       
     cart.forEach(function(item){
         cartquantity+=item.quantity;
-
     })
      save();
     return cartquantity;
@@ -54,7 +47,6 @@ export const cart_push=(product_name,id)=>{
     });
 
         if (matchingitem!=2){
-
             cart.push({
                 productname:product_name,
                 quantity:1,
@@ -71,4 +63,14 @@ export const cart_push=(product_name,id)=>{
 export function save(){
     localStorage.setItem('cartt',JSON.stringify(cart));
     
+}
+
+export function matchingitem_cart(cart_i){
+    let cart_quan=0;
+    cart.forEach((element)=> {
+        if(element.cart_idd==cart_i){
+            cart_quan=element.quantity
+        }
+    });
+    return cart_quan;
 }

@@ -1,26 +1,18 @@
 import {products} from "./data/products1.js";
-import {cart,remove_cart,cart_num,save} from "./data/cart.js";
+import {cart,remove_cart,cart_num,save,matchingitem_cart} from "./data/cart.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { del_func} from "./data/delivery_option.js";
-function render(){
+export function render(){
 let html="";
 
 console.log(cart);
 
 const today=dayjs()
 
-let delivery_date0;
-
-
-
-
-
-
  function dom(){
     
      cart.forEach((item)=>{
-         
-         
+               
          products.forEach((product)=>{
             
              if(item.productname==product.name){
@@ -56,14 +48,19 @@ document.querySelector('.ele').innerHTML=dom();
 document.querySelectorAll('.del').forEach((item)=>item.addEventListener('click',()=>{
     const name=item.dataset.name1;
     const qq= item.dataset.name;
-    
+    console.log(name)
+    let cart_ite=matchingitem_cart(name);
+    console.log(cart_ite)
+    if(cart_ite=1){
+
+        const rem= document.querySelector(`#${CSS.escape(name)}`);
+        rem.remove();
+    }
     remove_cart(qq);
-    const rem= document.querySelector(`#${CSS.escape(name)}`);
-    rem.remove();
-    dom();
     document.querySelector('.hed_no').innerHTML=cart_num();
+    dom()
 
-
+    render()
 }))
 document.querySelector('.hed_no').innerHTML=cart_num();
 
@@ -71,7 +68,7 @@ document.querySelector('.hed_no').innerHTML=cart_num();
     
 document.querySelectorAll('.inp').forEach((inp)=>{
     let name3=inp.dataset.name;
-    let name4=inp.dataset.idd
+    let name4=inp.dataset.idd;
     inp.addEventListener('click',()=>{
       console.log(name4);
       cart.forEach((itemm)=>{
@@ -89,4 +86,3 @@ document.querySelectorAll('.inp').forEach((inp)=>{
 
 
 }
-render();
