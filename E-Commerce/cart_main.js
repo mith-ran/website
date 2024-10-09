@@ -51,7 +51,7 @@ document.querySelectorAll('.del').forEach((item)=>item.addEventListener('click',
     console.log(name)
     let cart_ite=matchingitem_cart(name);
     console.log(cart_ite)
-    if(cart_ite.quantity=1){
+    if(cart_ite=1){
 
         const rem= document.querySelector(`#${CSS.escape(name)}`);
         rem.remove();
