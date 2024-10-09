@@ -13,13 +13,27 @@ if(!cart){
 export const remove_cart=(name1)=>{
    const name=name1;
    let new_cart=[];
+    let flag=0;
     cart.forEach((product)=>{
-        if(name!=product.productname){
-            new_cart.push(product);
+        if(product.productname==name){
+            if(product.qantity>1){
+                product.qantity-=1
+            }
+            else{
+                flag=1;
+            }
         }
+       
 
     })
+    if(flag=1){
+    cart.forEach((product)=>{
+         if(name!=product.productname){
+            new_cart.push(product);
+        }
+    })
     cart=new_cart;
+    }
     console.log(cart);
    save();
 }
