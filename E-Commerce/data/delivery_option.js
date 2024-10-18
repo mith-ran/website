@@ -35,3 +35,13 @@ export const del_func=(item,product,today)=>{
      
      return {deliveroption_html,delivery_date0}
  }
+
+ export function matchingitem(id){
+    let matchingitem;
+    delivery_option.forEach((Element)=>{
+        if(Element.id==id){
+            matchingitem=Element;
+        }
+    })
+    return matchingitem;
+ }
